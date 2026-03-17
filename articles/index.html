@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Insights & Hiring Trends | Bebo Partners</title>
+  <meta name="description" content="Hiring trends, market intelligence, and ServiceNow talent insights from Bebo Partners." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --red:#E8453C;--orange:#F5A623;--teal:#4ECDC4;--blue:#2E9CCA;
+      --dark:#0B1017;--dark2:#111820;--dark3:#161E28;--mid:#1E2A36;
+      --border:rgba(255,255,255,0.07);--text:#EDF2F7;--muted:rgba(237,242,247,0.48);
+      --D:'Bebas Neue',sans-serif;--B:'DM Sans',sans-serif;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:var(--dark);color:var(--text);font-family:var(--B);overflow-x:hidden}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;background:rgba(11,16,23,0.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+    .nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+    .nav-links a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
+    .nav-links a:hover{color:var(--text)}
+    .nav-cta{background:var(--red)!important;color:#fff!important;padding:9px 22px;border-radius:5px;font-weight:600!important}
+    .nav-cta:hover{background:#c93830!important}
+    .C{max-width:1100px;margin:0 auto;padding:0 48px}
+    .hero{padding:140px 48px 80px;max-width:1100px;margin:0 auto}
+    .sl2{display:flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:16px}
+    .sl2::before{content:'';width:18px;height:2px;background:var(--teal)}
+    .page-title{font-family:var(--D);font-size:clamp(48px,6vw,80px);line-height:.95;letter-spacing:2px;margin-bottom:20px}
+    .page-sub{font-size:17px;color:var(--muted);font-weight:300;line-height:1.7;max-width:520px}
+    .filters{display:flex;gap:10px;flex-wrap:wrap;margin:48px 0 56px;padding-top:32px;border-top:1px solid var(--border)}
+    .filter-btn{padding:8px 18px;border:1px solid var(--border);border-radius:100px;font-size:13px;color:var(--muted);background:none;cursor:pointer;font-family:var(--B);transition:.2s}
+    .filter-btn:hover,.filter-btn.active{border-color:var(--red);color:var(--text);background:rgba(232,69,60,.1)}
+    .articles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding-bottom:100px}
+    .acard{background:var(--dark2);border:1px solid var(--border);border-radius:10px;overflow:hidden;text-decoration:none;color:inherit;transition:border-color .2s,transform .2s;display:flex;flex-direction:column}
+    .acard:hover{border-color:rgba(255,255,255,.14);transform:translateY(-3px)}
+    .actop{padding:28px 28px 20px;flex:1}
+    .atg{display:inline-block;padding:3px 9px;border-radius:4px;font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;margin-bottom:14px}
+    .sr{background:rgba(232,69,60,.15);color:var(--red)}
+    .st2{background:rgba(78,205,196,.15);color:var(--teal)}
+    .so{background:rgba(245,166,35,.15);color:var(--orange)}
+    .sb{background:rgba(46,156,202,.15);color:var(--blue)}
+    .acard h3{font-size:17px;font-weight:600;line-height:1.4;margin-bottom:10px}
+    .acard p{font-size:13px;color:var(--muted);line-height:1.6;font-weight:300}
+    .acfoot{padding:14px 28px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+    .acmeta{font-size:12px;color:rgba(237,242,247,.28)}
+    .acarr{font-size:15px;color:var(--muted);transition:.2s}
+    .acard:hover .acarr{transform:translateX(4px);color:var(--red)}
+    .empty{text-align:center;padding:80px 20px;color:var(--muted);font-size:15px;font-weight:300;grid-column:1/-1}
+    footer{background:var(--dark);border-top:1px solid var(--border);padding:40px 0}
+    .fbot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
+    .fbot p{font-size:12px;color:rgba(237,242,247,.22);font-weight:300}
+    @media(max-width:860px){
+      nav{padding:0 20px}.nav-links{display:none}
+      .hero,.C{padding-left:20px;padding-right:20px}
+      .articles-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" style="text-decoration:none">
+    <svg width="150" height="36" viewBox="0 0 150 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="0" width="15" height="15" rx="2.8" fill="#E8453C"/>
+      <rect x="18" y="0" width="15" height="15" rx="2.8" fill="#F5A623"/>
+      <rect x="0" y="18" width="15" height="15" rx="2.8" fill="#4ECDC4"/>
+      <rect x="18" y="18" width="15" height="15" rx="2.8" fill="#2E9CCA"/>
+      <text x="42" y="24" font-family="'Bebas Neue',sans-serif" font-size="27" letter-spacing="1.5" fill="#EDF2F7">BEBO</text>
+      <text x="44" y="34" font-family="'DM Sans',sans-serif" font-size="8" font-weight="600" letter-spacing="3.5" fill="rgba(237,242,247,0.45)">PARTNERS</text>
+    </svg>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/#about">About</a></li>
+    <li><a href="/#services">Services</a></li>
+    <li><a href="/#intel">Market Intel</a></li>
+    <li><a href="/articles">Insights</a></li>
+    <li><a href="/#contact" class="nav-cta">Contact Us</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="sl2">Insights &amp; Hiring Trends</div>
+  <h1 class="page-title">WHAT WE'RE<br>WATCHING</h1>
+  <p class="page-sub">Market intelligence, hiring trends, and ServiceNow talent insights from the Bebo Partners team.</p>
+</div>
+
+<div class="C">
+  <div class="filters">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="hiring-strategy">Hiring Strategy</button>
+    <button class="filter-btn" data-filter="market-data">Market Data</button>
+    <button class="filter-btn" data-filter="platform-watch">Platform Watch</button>
+    <button class="filter-btn" data-filter="salary-guide">Salary Guide</button>
+    <button class="filter-btn" data-filter="industry-view">Industry View</button>
+  </div>
+
+  <div class="articles-grid" id="articles-grid">
+    <!-- Articles injected by JS below -->
+  </div>
+</div>
+
+<footer>
+  <div class="C">
+    <div class="fbot">
+      <p>© 2026 Bebo Partners LLC. All rights reserved.</p>
+      <p>ServiceNow is a registered trademark of ServiceNow, Inc.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ── Category tag colours ──
+  const tagClass = {
+    'hiring-strategy': 'sr',
+    'market-data':     'st2',
+    'platform-watch':  'so',
+    'salary-guide':    'sb',
+    'industry-view':   'st2'
+  };
+  const tagLabel = {
+    'hiring-strategy': 'Hiring Strategy',
+    'market-data':     'Market Data',
+    'platform-watch':  'Platform Watch',
+    'salary-guide':    'Salary Guide',
+    'industry-view':   'Industry View'
+  };
+
+  // ── Seed articles (your existing ones) ──
+  const seedArticles = [
+    { slug:'servicenow-talent-2am', title:'ServiceNow Talent: What Hiring Managers Are Googling at 2AM', summary:'The ServiceNow talent market is one of the most structurally broken in enterprise tech. Here\'s the data and the 7 pain points every hiring manager is struggling with.', category:'market-data', date:'2026-02-01' },
+    { slug:'servicenow-hire-failed', title:'Why Your ServiceNow Hire Failed (And How to Prevent It Next Time)', summary:'A bad ServiceNow placement costs $280K–$400K in total failure cost. Here\'s the vetting checklist that prevents it.', category:'hiring-strategy', date:'2026-03-01' },
+    { slug:'nearshore-mexico-advantage', title:'The Nearshore Mexico Advantage: What US Companies Are Missing', summary:'Senior ServiceNow talent. US timezone. Strong English. 30–40% cost savings. Why more firms are looking south.', category:'market-data', date:'2026-02-10' },
+    { slug:'now-assist-skills-gap', title:'Now Assist & AI Agents: The Skills Gap Nobody Is Talking About', summary:'ServiceNow\'s AI push is creating a new tier of scarcity. Most certified professionals don\'t have the skills the platform now demands.', category:'platform-watch', date:'2026-01-15' },
+    { slug:'10-day-window', title:'The 10-Day Window: Why Speed Is Now a Competitive Advantage in Tech Hiring', summary:'Top candidates are off-market in 10 days. Your 6-week approval process is your biggest hiring risk.', category:'hiring-strategy', date:'2025-12-10' },
+    { slug:'hrsd-vs-itsm', title:'HRSD vs ITSM: Why Hiring Managers Keep Conflating Two Very Different Roles', summary:'One of the most common and costly mistakes in ServiceNow hiring — and the questions to ask before posting the job.', category:'industry-view', date:'2025-12-01' }
+  ];
+
+  function formatDate(d) {
+    return new Date(d).toLocaleDateString('en-US', { year:'numeric', month:'long', day:'numeric' });
+  }
+
+  function renderCard(a) {
+    return `
+      <a href="/articles/${a.slug}.html" class="acard" data-cat="${a.category}">
+        <div class="actop">
+          <span class="atg ${tagClass[a.category] || 'sr'}">${tagLabel[a.category] || a.category}</span>
+          <h3>${a.title}</h3>
+          <p>${a.summary}</p>
+        </div>
+        <div class="acfoot">
+          <span class="acmeta">${formatDate(a.date)}</span>
+          <span class="acarr">→</span>
+        </div>
+      </a>`;
+  }
+
+  function render(filter) {
+    const grid = document.getElementById('articles-grid');
+    const list = filter === 'all' ? seedArticles : seedArticles.filter(a => a.category === filter);
+    if (list.length === 0) {
+      grid.innerHTML = '<div class="empty">No articles in this category yet.</div>';
+    } else {
+      grid.innerHTML = list.map(renderCard).join('');
+    }
+  }
+
+  render('all');
+
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      render(btn.dataset.filter);
+    });
+  });
+</script>
+</body>
+</html>

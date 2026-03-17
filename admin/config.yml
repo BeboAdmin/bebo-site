@@ -1,0 +1,28 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "articles"
+    label: "Articles & Insights"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "Hiring Strategy", value: "hiring-strategy" }
+          - { label: "Market Data", value: "market-data" }
+          - { label: "Platform Watch", value: "platform-watch" }
+          - { label: "Salary Guide", value: "salary-guide" }
+          - { label: "Industry View", value: "industry-view" }
+      - { label: "Summary", name: "summary", widget: "text", hint: "One or two sentences shown on the articles listing page." }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Featured", name: "featured", widget: "boolean", default: false, required: false }

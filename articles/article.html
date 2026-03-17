@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="page-title">Article | Bebo Partners</title>
+  <meta name="description" id="page-desc" content="Insights and hiring intelligence from Bebo Partners." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet" />
+  <!-- Marked.js for Markdown rendering -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    :root {
+      --red:#E8453C;--orange:#F5A623;--teal:#4ECDC4;--blue:#2E9CCA;
+      --dark:#0B1017;--dark2:#111820;--dark3:#161E28;--mid:#1E2A36;
+      --border:rgba(255,255,255,0.07);--text:#EDF2F7;--muted:rgba(237,242,247,0.48);
+      --D:'Bebas Neue',sans-serif;--B:'DM Sans',sans-serif;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:var(--dark);color:var(--text);font-family:var(--B);overflow-x:hidden}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;background:rgba(11,16,23,0.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+    .nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+    .nav-links a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
+    .nav-links a:hover{color:var(--text)}
+    .nav-cta{background:var(--red)!important;color:#fff!important;padding:9px 22px;border-radius:5px;font-weight:600!important}
+
+    /* Article layout */
+    .article-wrap{max-width:720px;margin:0 auto;padding:120px 48px 100px}
+    .back-link{display:inline-flex;align-items:center;gap:8px;color:var(--muted);text-decoration:none;font-size:14px;font-weight:500;margin-bottom:40px;transition:color .2s}
+    .back-link:hover{color:var(--text)}
+    .atg{display:inline-block;padding:4px 10px;border-radius:4px;font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;margin-bottom:20px}
+    .sr{background:rgba(232,69,60,.15);color:var(--red)}
+    .st2{background:rgba(78,205,196,.15);color:var(--teal)}
+    .so{background:rgba(245,166,35,.15);color:var(--orange)}
+    .sb{background:rgba(46,156,202,.15);color:var(--blue)}
+    .article-title{font-family:var(--D);font-size:clamp(36px,5vw,56px);line-height:1;letter-spacing:1px;margin-bottom:16px}
+    .article-meta{font-size:13px;color:rgba(237,242,247,.3);margin-bottom:48px;padding-bottom:32px;border-bottom:1px solid var(--border)}
+
+    /* Body content styles */
+    .article-body{font-size:17px;font-weight:300;line-height:1.8;color:rgba(237,242,247,.8)}
+    .article-body h2{font-family:var(--D);font-size:32px;letter-spacing:1px;color:var(--text);margin:48px 0 16px;line-height:1.05}
+    .article-body h3{font-size:18px;font-weight:600;color:var(--text);margin:36px 0 12px}
+    .article-body p{margin-bottom:24px}
+    .article-body strong{color:var(--text);font-weight:500}
+    .article-body em{font-style:italic;color:rgba(237,242,247,.6)}
+    .article-body ul,.article-body ol{margin:0 0 24px 24px}
+    .article-body li{margin-bottom:8px}
+    .article-body blockquote{border-left:3px solid var(--red);padding:16px 24px;margin:32px 0;background:var(--dark3);border-radius:0 8px 8px 0;font-style:italic;color:rgba(237,242,247,.6)}
+    .article-body hr{border:none;border-top:1px solid var(--border);margin:40px 0}
+    .article-body a{color:var(--teal);text-decoration:underline;text-underline-offset:3px}
+    .article-body table{width:100%;border-collapse:collapse;margin:24px 0;font-size:15px}
+    .article-body th{text-align:left;padding:10px 14px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(237,242,247,.3);border-bottom:1px solid var(--border)}
+    .article-body td{padding:12px 14px;border-bottom:1px solid var(--border);color:var(--muted)}
+    .article-body td:first-child{color:var(--text)}
+
+    /* CTA box */
+    .article-cta{margin-top:64px;padding:40px;background:var(--dark3);border:1px solid var(--border);border-radius:12px;border-left:4px solid var(--red)}
+    .article-cta h3{font-family:var(--D);font-size:28px;letter-spacing:1px;margin-bottom:10px}
+    .article-cta p{font-size:15px;color:var(--muted);font-weight:300;margin-bottom:24px}
+    .cta-btn{display:inline-block;background:var(--red);color:#fff;padding:13px 28px;border-radius:6px;text-decoration:none;font-size:15px;font-weight:600;transition:.2s}
+    .cta-btn:hover{background:#c93830}
+
+    footer{background:var(--dark);border-top:1px solid var(--border);padding:40px 0}
+    .C{max-width:1100px;margin:0 auto;padding:0 48px}
+    .fbot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
+    .fbot p{font-size:12px;color:rgba(237,242,247,.22);font-weight:300}
+
+    @media(max-width:860px){
+      nav{padding:0 20px}.nav-links{display:none}
+      .article-wrap{padding:100px 20px 60px}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" style="text-decoration:none">
+    <svg width="150" height="36" viewBox="0 0 150 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="0" width="15" height="15" rx="2.8" fill="#E8453C"/>
+      <rect x="18" y="0" width="15" height="15" rx="2.8" fill="#F5A623"/>
+      <rect x="0" y="18" width="15" height="15" rx="2.8" fill="#4ECDC4"/>
+      <rect x="18" y="18" width="15" height="15" rx="2.8" fill="#2E9CCA"/>
+      <text x="42" y="24" font-family="'Bebas Neue',sans-serif" font-size="27" letter-spacing="1.5" fill="#EDF2F7">BEBO</text>
+      <text x="44" y="34" font-family="'DM Sans',sans-serif" font-size="8" font-weight="600" letter-spacing="3.5" fill="rgba(237,242,247,0.45)">PARTNERS</text>
+    </svg>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/#about">About</a></li>
+    <li><a href="/#services">Services</a></li>
+    <li><a href="/#intel">Market Intel</a></li>
+    <li><a href="/articles">Insights</a></li>
+    <li><a href="/#contact" class="nav-cta">Contact Us</a></li>
+  </ul>
+</nav>
+
+<div class="article-wrap">
+  <a href="/articles" class="back-link">← All Insights</a>
+  <div id="article-content">
+    <div style="color:var(--muted);font-size:15px">Loading article...</div>
+  </div>
+  <div class="article-cta">
+    <h3>WORKING WITH BEBO PARTNERS</h3>
+    <p>Whether you're hiring for ServiceNow or another specialist technology discipline, we'd like to hear from you.</p>
+    <a href="/#contact" class="cta-btn">Get In Touch</a>
+  </div>
+</div>
+
+<footer>
+  <div class="C">
+    <div class="fbot">
+      <p>© 2026 Bebo Partners LLC. All rights reserved.</p>
+      <p>ServiceNow is a registered trademark of ServiceNow, Inc.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const tagClass = {
+    'hiring-strategy':'sr','market-data':'st2',
+    'platform-watch':'so','salary-guide':'sb','industry-view':'st2'
+  };
+  const tagLabel = {
+    'hiring-strategy':'Hiring Strategy','market-data':'Market Data',
+    'platform-watch':'Platform Watch','salary-guide':'Salary Guide','industry-view':'Industry View'
+  };
+
+  function formatDate(d) {
+    return new Date(d).toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  }
+
+  // Articles data — add new entries here when you publish via the CMS
+  const articles = {
+    'servicenow-talent-2am': {
+      title: 'ServiceNow Talent: What Hiring Managers Are Googling at 2AM',
+      category: 'market-data',
+      date: '2026-02-01',
+      body: `## The Headline Problem
+
+85% of Fortune 500 companies run ServiceNow. Only ~116,000 certified professionals exist globally to support all of them. Effective unemployment in the ServiceNow ecosystem sits near **1%**.
+
+This is not a sourcing problem. It is a structural market failure — and that's Bebo's opening.
+
+## What Hiring Managers Are Actually Searching For
+
+These are the real search terms and forum posts coming from IT directors and TA leads at ServiceNow shops:
+
+- *"why can't I find a ServiceNow developer"*
+- *"ServiceNow CSA certified but can't do anything practical"*
+- *"how do I verify ServiceNow certifications are real"*
+- *"vendor sent me a resume with ServiceNow experience — it's fake"*
+- *"our ServiceNow project stalled because we lost our only developer"*
+
+## The 7 Deepest Pain Points
+
+### 1. Certification Fraud
+Telegram groups openly sell exam dumps. Valid voucher codes are shared and resold. Entire operations exist to train people to pass exams — not to do the job. Generalist recruiters keyword-match "CSA" and move on.
+
+**Bebo's approach:** We verify certifications through the NowLearning portal — not just the resume.
+
+### 2. The Resume–Reality Gap
+Every resume claims ITSM, HRSD, CMDB, SecOps, and CSM. Real depth is usually 1–2 modules. Replacing a bad hire costs **2–3× annual salary** when you add delays, rework, and failed go-lives.
+
+### 3. Losing the Candidate Before You Hire Them
+Top candidates receive 3–5 competing offers simultaneously. Only 30% of companies fill a role within 30 days. Candidates are effectively off-market within 10 days of active searching.
+
+### 4. Internal TA Doesn't Understand the Roles
+Most corporate TA teams are generalists. They keyword-match "ServiceNow" and forward resumes without technical screening. Hiring managers waste 4–6 hours per bad candidate on intake calls.
+
+### 5. Salary Expectations Shock
+Companies that don't pay market rate lose candidates immediately — and create market negativity about their brand. In the ServiceNow community, word travels fast.
+
+### 6. Single Point of Failure
+Many mid-market companies run enterprise deployments with 1–2 ServiceNow professionals. When that person leaves, a platform crisis and a recruitment crisis hit simultaneously.
+
+### 7. Platform Evolution Outpaces Talent
+ServiceNow releases **two major platform updates per year**. Certifications go stale within 12–18 months. AI features like Now Assist require skills that most certified professionals simply don't have yet.
+
+---
+
+*Compiled by Bebo Partners. For market intelligence briefings or to discuss a search, [contact us](/#contact).*`
+    },
+    'servicenow-hire-failed': {
+      title: 'Why Your ServiceNow Hire Failed (And How to Prevent It Next Time)',
+      category: 'hiring-strategy',
+      date: '2026-03-01',
+      body: `## The Real Cost of a Bad ServiceNow Hire
+
+A failed ServiceNow placement costs **$280,000–$400,000** in total when you account for:
+
+- Time lost to a slow search
+- Onboarding investment wasted
+- Implementation delays and rework
+- Momentum lost across the wider programme
+- Recruiting again from scratch
+
+Most companies only count the recruiter fee. That's the smallest part of the problem.
+
+## Why It Happens
+
+### Certifications That Don't Reflect Reality
+The most common failure mode. A candidate passes the CSA or CIS exam — possibly through a dump site — and lists six modules on their resume. In practice, they can't configure a basic workflow without assistance.
+
+**Prevention:** Validate through the NowLearning portal. Ask platform-specific technical questions before the interview stage, not during it.
+
+### Depth Misread as Breadth
+ServiceNow resumes are written to look broad. The candidate who claims ITSM, HRSD, CMDB, and SecOps experience is almost never genuinely proficient across all four. Real depth is usually 1–2 modules.
+
+**Prevention:** Identify the 1–2 modules that are critical for your environment and screen specifically for those. Don't be distracted by the rest.
+
+### Speed of Process vs Speed of Market
+The market moves in days. Most enterprise hiring processes move in weeks. By the time your panel interview is scheduled, your preferred candidate has accepted elsewhere.
+
+**Prevention:** Pre-approve a shortlist before you start. Compress decision-making to the hiring manager level wherever possible.
+
+## The Pre-Hire Checklist
+
+Before making an offer on any ServiceNow hire:
+
+1. **NowLearning verification** — confirm the certification is current and valid
+2. **Version currency** — which release are they certified on? Are they current?
+3. **Module depth test** — a practical question specific to your environment, not a generic quiz
+4. **Reference from a ServiceNow context** — not just a character reference, a platform-specific one
+5. **Salary alignment** — confirm compensation is at or above market before investing in the process
+
+---
+
+*Questions about a specific search? [Get in touch](/#contact).*`
+    },
+    'nearshore-mexico-advantage': {
+      title: 'The Nearshore Mexico Advantage: What US Companies Are Missing',
+      category: 'market-data',
+      date: '2026-02-10',
+      body: `## The Case for Nearshore
+
+The US ServiceNow talent market is structurally undersupplied. Hiring onshore at market rates is expensive, slow, and increasingly competitive. Many companies are looking offshore — but offshore comes with its own risks: timezone gaps, communication friction, and quality inconsistency.
+
+Nearshore Mexico is a different proposition entirely.
+
+## What Nearshore Mexico Actually Offers
+
+### Timezone Alignment
+Mexico operates in US timezones (CST/MST/PST depending on location). Your team in Guadalajara or Mexico City is on a call with your Chicago or Denver office without anyone getting up early or staying late.
+
+### Technical Calibre
+Mexico's major tech hubs — Guadalajara, Mexico City, Monterrey — produce strong engineering and platform talent. ServiceNow adoption among Mexican enterprises is growing, creating a genuine pool of experienced professionals.
+
+### English Communication
+Senior Mexican tech professionals typically have strong business English. This isn't the communication friction you get with truly offshore delivery.
+
+### Cost Advantage
+Compared to equivalent US onshore rates, nearshore Mexico delivers **30–40% savings** on contractor day rates without the quality compromise of far-offshore alternatives.
+
+## How Bebo Approaches Nearshore
+
+We don't treat nearshore as a cost-cutting exercise. We apply the same vetting rigour we use onshore:
+
+- Certification verification through NowLearning
+- Technical screening for platform depth (not just module breadth)
+- Communication assessment — written and verbal
+- Reference checks in a ServiceNow context
+
+The result is a contractor who integrates seamlessly into a US-led delivery team.
+
+---
+
+*Interested in nearshore Mexico talent for your ServiceNow programme? [Contact us](/#contact).*`
+    },
+    'now-assist-skills-gap': {
+      title: 'Now Assist & AI Agents: The Skills Gap Nobody Is Talking About',
+      category: 'platform-watch',
+      date: '2026-01-15',
+      body: `## ServiceNow's AI Pivot
+
+ServiceNow has moved fast on AI. Now Assist — their generative AI layer — is now embedded across ITSM, HRSD, CSM, and other modules. AI Agents are entering the platform. The company is positioning itself as an AI-first enterprise platform, not just a workflow tool.
+
+The talent market has not kept pace.
+
+## What the Skills Gap Looks Like
+
+Most ServiceNow professionals were certified and trained on the pre-AI platform. Their expertise is real — but it's in configuration, scripting, Flow Designer, and module-specific implementation. They have little or no exposure to:
+
+- **Now Assist configuration and governance** — how to deploy, tune, and manage generative AI features
+- **AI Control Tower** — monitoring and controlling AI agent behaviour across the platform
+- **Prompt engineering in a ServiceNow context** — structuring inputs for AI features to behave predictably
+- **Agentic workflow design** — orchestrating autonomous AI agents within ServiceNow processes
+
+These are genuinely new skills, and certified professionals who haven't actively kept up are behind — often without realising it.
+
+## The Hiring Implication
+
+If you're hiring for a ServiceNow role that touches AI features, a standard certification screen is not sufficient. You need to understand:
+
+1. Whether the candidate has worked on an instance running Now Assist in production
+2. Which AI features they've configured (not just used)
+3. How they approach AI governance and output validation
+
+Most generalist recruiters won't ask any of these questions. Most candidates won't volunteer that they haven't touched these features.
+
+## What Bebo Does Differently
+
+We've updated our technical screening to include Now Assist and agentic capabilities specifically. This isn't a nice-to-have — it's increasingly the difference between a hire who delivers and one who struggles to keep up with where your platform is going.
+
+---
+
+*Hiring for Now Assist or AI-adjacent ServiceNow roles? [Let's talk](/#contact).*`
+    },
+    '10-day-window': {
+      title: 'The 10-Day Window: Why Speed Is Now a Competitive Advantage in Tech Hiring',
+      category: 'hiring-strategy',
+      date: '2025-12-10',
+      body: `## The Number That Should Change How You Hire
+
+Top ServiceNow candidates are actively off-market within **10 days** of beginning a search.
+
+This is not an estimate. It reflects the reality of a market where qualified professionals receive multiple approaches simultaneously, where headhunters are constantly working the best candidates, and where an effective candidate has usually signalled interest to 3–5 firms before you've even completed your intake process.
+
+## Where Enterprise Hiring Processes Go Wrong
+
+### The Approval Chain
+Most companies require multiple approvals before a search can begin, before an interview can be scheduled, and before an offer can be made. Each step adds days. By the time final approval comes through, the market has moved.
+
+### The Multi-Stage Interview
+Five stages. Panel presentations. Technical tests that take days to prepare. These processes were designed for a buyer's market. In the ServiceNow talent market, they are a candidate repellent.
+
+### The Committee Decision
+Decisions made by committee take longer. When no single person is accountable for a hire, urgency diffuses. The candidate accepts elsewhere while the committee schedules another review.
+
+## What Competitive Hiring Looks Like
+
+The companies that consistently win the best ServiceNow talent share a few behaviours:
+
+1. **Pre-approved hiring criteria** before the search begins — salary range, must-have skills, decision-makers identified
+2. **Two-stage maximum** interview process — one technical screen, one hiring manager conversation
+3. **48-hour decision window** — when a shortlisted candidate is presented, a decision is made within 48 hours
+4. **Offer authority at hiring manager level** — no waiting for committee sign-off on standard hires
+
+This doesn't mean lowering your standards. It means respecting that the market is competitive and your process is part of your employer brand.
+
+---
+
+*Want to talk through how to structure a faster, more competitive hiring process? [Get in touch](/#contact).*`
+    },
+    'hrsd-vs-itsm': {
+      title: 'HRSD vs ITSM: Why Hiring Managers Keep Conflating Two Very Different Roles',
+      category: 'industry-view',
+      date: '2025-12-01',
+      body: `## The Confusion Is Costing Companies
+
+It happens constantly: a company posts a "ServiceNow Developer" role expecting to fill an HRSD implementation gap, receives a flood of ITSM-heavy candidates, and wonders why nobody fits. Or they hire an ITSM specialist for an HRSD project and spend three months watching them struggle.
+
+HRSD and ITSM are both ServiceNow. They share an underlying platform. Beyond that, they are different disciplines with different skill profiles, different stakeholder ecosystems, and different candidate pools.
+
+## What ITSM Professionals Do
+
+ITSM (IT Service Management) professionals work in the traditional heartland of ServiceNow:
+
+- Incident, problem, and change management workflows
+- SLA configuration and reporting
+- Service catalogue and request fulfilment
+- CMDB (Configuration Management Database) — often a distinct specialisation within ITSM
+- Integration with monitoring tools and IT operations
+
+The ITSM talent pool is the largest in the ServiceNow ecosystem. It's also the most fraudulently represented.
+
+## What HRSD Professionals Do
+
+HRSD (Human Resources Service Delivery) professionals implement ServiceNow in an HR context:
+
+- Employee lifecycle processes — onboarding, offboarding, transfers
+- Case management for HR enquiries
+- HR service catalogue and self-service portals
+- Integration with HRIS systems (Workday, SAP SuccessFactors, Oracle HCM)
+- Compliance and data privacy considerations specific to HR data
+
+The HRSD talent pool is significantly smaller than ITSM. Genuinely experienced HRSD consultants are scarce, and they know it — which is reflected in their compensation expectations.
+
+## Why They Don't Overlap As Much As Resumes Suggest
+
+Many ServiceNow candidates list both ITSM and HRSD on their resumes. Real depth in both is rare. The skillsets diverge at the configuration level — the business processes, the stakeholder language, the integration landscape, and the compliance requirements are different.
+
+Before posting a role, be clear on whether you need:
+
+- An ITSM specialist who has touched HRSD
+- A genuine HRSD specialist with a narrow ITSM background
+- A platform generalist (rare, expensive, and often a compromise in both areas)
+
+Getting this wrong at the job description stage wastes weeks of search time and creates a bad candidate experience.
+
+---
+
+*Need help defining the right ServiceNow profile for your hire? [Talk to us](/#contact).*`
+    }
+  };
+
+  // Determine which article to show from the URL
+  const slug = window.location.pathname.replace(/^\/articles\//, '').replace(/\.html$/, '');
+  const article = articles[slug];
+
+  if (article) {
+    document.getElementById('page-title').textContent = article.title + ' | Bebo Partners';
+    document.getElementById('page-desc').setAttribute('content', article.title);
+    const tc = tagClass[article.category] || 'sr';
+    const tl = tagLabel[article.category] || article.category;
+    const date = new Date(article.date).toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+    document.getElementById('article-content').innerHTML = `
+      <span class="atg ${tc}">${tl}</span>
+      <h1 class="article-title">${article.title}</h1>
+      <div class="article-meta">Bebo Partners · ${date}</div>
+      <div class="article-body">${marked.parse(article.body)}</div>
+    `;
+  } else {
+    document.getElementById('article-content').innerHTML = `
+      <h1 class="article-title">Article Not Found</h1>
+      <p style="color:var(--muted);margin-top:20px">This article may have moved. <a href="/articles" style="color:var(--teal)">View all insights →</a></p>
+    `;
+  }
+</script>
+</body>
+</html>
