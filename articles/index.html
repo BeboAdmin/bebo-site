@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <style>
     :root {
       --red:#E8453C;--orange:#F5A623;--teal:#4ECDC4;--blue:#2E9CCA;
@@ -23,7 +24,6 @@
     .nav-links a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
     .nav-links a:hover{color:var(--text)}
     .nav-cta{background:var(--red)!important;color:#fff!important;padding:9px 22px;border-radius:5px;font-weight:600!important}
-    .nav-cta:hover{background:#c93830!important}
     .C{max-width:1100px;margin:0 auto;padding:0 48px}
     .hero{padding:140px 48px 80px;max-width:1100px;margin:0 auto}
     .sl2{display:flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:16px}
@@ -48,6 +48,7 @@
     .acmeta{font-size:12px;color:rgba(237,242,247,.28)}
     .acarr{font-size:15px;color:var(--muted);transition:.2s}
     .acard:hover .acarr{transform:translateX(4px);color:var(--red)}
+    .loading{text-align:center;padding:80px 20px;color:var(--muted);font-size:15px;font-weight:300;grid-column:1/-1}
     .empty{text-align:center;padding:80px 20px;color:var(--muted);font-size:15px;font-weight:300;grid-column:1/-1}
     footer{background:var(--dark);border-top:1px solid var(--border);padding:40px 0}
     .fbot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
@@ -96,9 +97,8 @@
     <button class="filter-btn" data-filter="salary-guide">Salary Guide</button>
     <button class="filter-btn" data-filter="industry-view">Industry View</button>
   </div>
-
   <div class="articles-grid" id="articles-grid">
-    <!-- Articles injected by JS below -->
+    <div class="loading">Loading articles...</div>
   </div>
 </div>
 
@@ -112,54 +112,61 @@
 </footer>
 
 <script>
-  // ── Category tag colours ──
+  const GITHUB_USER = 'BeboAdmin';
+  const GITHUB_REPO = 'bebo-site';
+  const POSTS_PATH = '_posts';
+
   const tagClass = {
-    'hiring-strategy': 'sr',
-    'market-data':     'st2',
-    'platform-watch':  'so',
-    'salary-guide':    'sb',
-    'industry-view':   'st2'
+    'hiring-strategy':'sr','market-data':'st2',
+    'platform-watch':'so','salary-guide':'sb','industry-view':'st2'
   };
   const tagLabel = {
-    'hiring-strategy': 'Hiring Strategy',
-    'market-data':     'Market Data',
-    'platform-watch':  'Platform Watch',
-    'salary-guide':    'Salary Guide',
-    'industry-view':   'Industry View'
+    'hiring-strategy':'Hiring Strategy','market-data':'Market Data',
+    'platform-watch':'Platform Watch','salary-guide':'Salary Guide','industry-view':'Industry View'
   };
 
-  // ── Seed articles (your existing ones) ──
-  const seedArticles = [
-    { slug:'servicenow-talent-2am', title:'ServiceNow Talent: What Hiring Managers Are Googling at 2AM', summary:'The ServiceNow talent market is one of the most structurally broken in enterprise tech. Here\'s the data and the 7 pain points every hiring manager is struggling with.', category:'market-data', date:'2026-02-01' },
-    { slug:'servicenow-hire-failed', title:'Why Your ServiceNow Hire Failed (And How to Prevent It Next Time)', summary:'A bad ServiceNow placement costs $280K–$400K in total failure cost. Here\'s the vetting checklist that prevents it.', category:'hiring-strategy', date:'2026-03-01' },
-    { slug:'nearshore-mexico-advantage', title:'The Nearshore Mexico Advantage: What US Companies Are Missing', summary:'Senior ServiceNow talent. US timezone. Strong English. 30–40% cost savings. Why more firms are looking south.', category:'market-data', date:'2026-02-10' },
-    { slug:'now-assist-skills-gap', title:'Now Assist & AI Agents: The Skills Gap Nobody Is Talking About', summary:'ServiceNow\'s AI push is creating a new tier of scarcity. Most certified professionals don\'t have the skills the platform now demands.', category:'platform-watch', date:'2026-01-15' },
-    { slug:'10-day-window', title:'The 10-Day Window: Why Speed Is Now a Competitive Advantage in Tech Hiring', summary:'Top candidates are off-market in 10 days. Your 6-week approval process is your biggest hiring risk.', category:'hiring-strategy', date:'2025-12-10' },
-    { slug:'hrsd-vs-itsm', title:'HRSD vs ITSM: Why Hiring Managers Keep Conflating Two Very Different Roles', summary:'One of the most common and costly mistakes in ServiceNow hiring — and the questions to ask before posting the job.', category:'industry-view', date:'2025-12-01' }
-  ];
-
   function formatDate(d) {
-    return new Date(d).toLocaleDateString('en-US', { year:'numeric', month:'long', day:'numeric' });
+    return new Date(d).toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
   }
 
-  function renderCard(a) {
+  function parseFrontmatter(text) {
+    const match = text.match(/^---\n([\s\S]*?)\n---/);
+    if (!match) return { meta: {}, body: text };
+    const meta = {};
+    match[1].split('\n').forEach(line => {
+      const [key, ...val] = line.split(':');
+      if (key && val.length) meta[key.trim()] = val.join(':').trim().replace(/^["']|["']$/g,'');
+    });
+    return { meta, body: text.slice(match[0].length).trim() };
+  }
+
+  function slugFromFilename(filename) {
+    return filename.replace(/^\d{4}-\d{2}-\d{2}-/, '').replace(/\.md$/, '');
+  }
+
+  function renderCard(article) {
+    const tc = tagClass[article.category] || 'sr';
+    const tl = tagLabel[article.category] || article.category;
     return `
-      <a href="/articles/${a.slug}.html" class="acard" data-cat="${a.category}">
+      <a href="/articles/post.html?slug=${encodeURIComponent(article.slug)}" class="acard" data-cat="${article.category}">
         <div class="actop">
-          <span class="atg ${tagClass[a.category] || 'sr'}">${tagLabel[a.category] || a.category}</span>
-          <h3>${a.title}</h3>
-          <p>${a.summary}</p>
+          <span class="atg ${tc}">${tl}</span>
+          <h3>${article.title}</h3>
+          <p>${article.summary || ''}</p>
         </div>
         <div class="acfoot">
-          <span class="acmeta">${formatDate(a.date)}</span>
+          <span class="acmeta">${formatDate(article.date)}</span>
           <span class="acarr">→</span>
         </div>
       </a>`;
   }
 
-  function render(filter) {
+  let allArticles = [];
+  let currentFilter = 'all';
+
+  function renderGrid() {
     const grid = document.getElementById('articles-grid');
-    const list = filter === 'all' ? seedArticles : seedArticles.filter(a => a.category === filter);
+    const list = currentFilter === 'all' ? allArticles : allArticles.filter(a => a.category === currentFilter);
     if (list.length === 0) {
       grid.innerHTML = '<div class="empty">No articles in this category yet.</div>';
     } else {
@@ -167,15 +174,44 @@
     }
   }
 
-  render('all');
+  async function loadArticles() {
+    try {
+      const res = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${POSTS_PATH}`);
+      if (!res.ok) throw new Error('No posts found');
+      const files = await res.json();
+      const mdFiles = files.filter(f => f.name.endsWith('.md'));
+
+      const articles = await Promise.all(mdFiles.map(async file => {
+        const r = await fetch(file.download_url);
+        const text = await r.text();
+        const { meta } = parseFrontmatter(text);
+        return {
+          slug: slugFromFilename(file.name),
+          title: meta.title || file.name,
+          date: meta.date || file.name.substring(0, 10),
+          category: meta.category || 'industry-view',
+          summary: meta.summary || ''
+        };
+      }));
+
+      allArticles = articles.sort((a, b) => new Date(b.date) - new Date(a.date));
+      renderGrid();
+    } catch(e) {
+      document.getElementById('articles-grid').innerHTML = '<div class="empty">No articles published yet.</div>';
+    }
+  }
 
   document.querySelectorAll('.filter-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      render(btn.dataset.filter);
+      currentFilter = btn.dataset.filter;
+      renderGrid();
     });
   });
+
+  loadArticles();
 </script>
 </body>
 </html>
+```
