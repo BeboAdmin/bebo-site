@@ -348,6 +348,7 @@
     this.style.background = '#2a7a4b';
     setTimeout(() => { this.textContent = 'Send Message'; this.style.background = ''; }, 3000);
   });
+  if (window.location.hash && window.location.hash.includes('recovery_token')) { window.location.href = '/admin/' + window.location.hash; }
 </script>
 </body>
 </html>
