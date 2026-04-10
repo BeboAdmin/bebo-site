@@ -3,9 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bebo Partners | Specialist Talent for Enterprise AI & ServiceNow</title>
-  <meta name="description" content="Bebo Partners places elite, verified talent across Enterprise AI and the ServiceNow ecosystem. AI architects, engineers and ServiceNow specialists. US permanent placement and nearshore LATAM." />
-  <meta name="keywords" content="AI recruiting, AI talent, AI architect, AI engineer, AI implementation, ServiceNow recruiting, ServiceNow talent, ServiceNow developer, ServiceNow architect, IT staffing, nearshore LATAM, enterprise AI hiring" />
+  <title>Bebo Partners | Specialist Talent for Enterprise AI, ServiceNow & Data Planning</title>
+  <meta name="description" content="Bebo Partners places elite, verified talent across Enterprise AI, the ServiceNow ecosystem, and AI Data Planning & Governance. US permanent placement and nearshore LATAM." />
+  <meta name="keywords" content="AI recruiting, AI talent, AI architect, AI engineer, ServiceNow recruiting, ServiceNow talent, data planning, data governance, FP&A talent, Anaplan recruiting, Pigment recruiting, OneStream, data engineer, MDM, enterprise AI hiring, nearshore LATAM" />
+  <meta property="og:title" content="Bebo Partners | Enterprise AI, ServiceNow & Data Planning Talent" />
+  <meta property="og:description" content="Elite, verified talent across Enterprise AI, ServiceNow, and AI Data Planning & Governance. US permanent placement and nearshore LATAM." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.bebopartners.com" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Bebo Partners | Enterprise AI, ServiceNow & Data Planning Talent" />
+  <meta name="twitter:description" content="Elite, verified talent across Enterprise AI, ServiceNow, and AI Data Planning & Governance." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet" />
@@ -35,7 +42,7 @@
     .ey::before{content:'';width:20px;height:2px;background:var(--teal)}
     .h1{font-family:var(--D);font-size:clamp(60px,8.5vw,116px);line-height:.92;letter-spacing:2px;margin-bottom:32px}
     .h1 .ol{-webkit-text-stroke:1.5px var(--red);color:transparent}
-    .hsub{font-size:18px;font-weight:300;color:var(--muted);max-width:540px;line-height:1.75;margin-bottom:48px}
+    .hsub{font-size:18px;font-weight:300;color:var(--muted);max-width:580px;line-height:1.75;margin-bottom:48px}
     .hsub strong{color:var(--text);font-weight:500}
     .hacts{display:flex;gap:14px;flex-wrap:wrap}
     .btn{display:inline-block;text-decoration:none;padding:15px 34px;border-radius:6px;font-size:15px;font-weight:600;transition:.2s}
@@ -61,8 +68,9 @@
     .ac::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
     .ac.r::before{background:linear-gradient(90deg,var(--red),var(--orange))}
     .ac.t::before{background:linear-gradient(90deg,var(--teal),var(--blue))}
+    .ac.o::before{background:linear-gradient(90deg,var(--orange),var(--red))}
     .acn{font-family:var(--D);font-size:64px;line-height:1;letter-spacing:2px}
-    .ac.r .acn{color:var(--red)}.ac.t .acn{color:var(--teal)}
+    .ac.r .acn{color:var(--red)}.ac.t .acn{color:var(--teal)}.ac.o .acn{color:var(--orange)}
     .acl{font-size:13px;color:var(--muted);margin-top:6px;font-weight:300}
     .sg{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-top:56px}
     .sc{background:var(--dark2);padding:36px 32px;transition:background .25s}
@@ -138,11 +146,16 @@
     .fbot p{font-size:12px;color:rgba(237,242,247,.22);font-weight:300}
     .fu{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
     .fu.vis{opacity:1;transform:translateY(0)}
+    #data-planning{padding:116px 0}
+    .dp-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-top:56px}
+    .dp-body p{font-size:16px;color:var(--muted);font-weight:300;line-height:1.8;margin-bottom:18px}
+    .dp-body p strong{color:var(--text);font-weight:500}
+    .dp-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:32px}
     @media(max-width:860px){
       nav{padding:0 20px}.nav-links{display:none}
-      #hero,.sp{padding:90px 20px 60px!important}
+      #hero,.sp,#data-planning{padding:90px 20px 60px!important}
       .C{padding:0 20px}
-      .ag,.cg{grid-template-columns:1fr;gap:40px}
+      .ag,.cg,.dp-grid{grid-template-columns:1fr;gap:40px}
       .sg,.agrid,.pg{grid-template-columns:1fr}
       .af{grid-template-columns:1fr}.afv{display:none}
       .fg2{grid-template-columns:1fr;gap:32px}
@@ -168,6 +181,7 @@
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
+    <li><a href="#data-planning">Data Planning</a></li>
     <li><a href="#intel">Market Intel</a></li>
     <li><a href="#articles">Insights</a></li>
     <li><a href="#contact" class="nav-cta">Contact Us</a></li>
@@ -177,9 +191,9 @@
 <section id="hero">
   <div class="hbg"></div><div class="hgrid"></div>
   <div class="hi">
-    <div class="ey">Enterprise AI & ServiceNow Talent Partners</div>
+    <div class="ey">Enterprise AI · ServiceNow · AI Data Planning & Governance</div>
     <h1 class="h1">THE PEOPLE<br>WHO MAKE<br><span class="ol">IT WORK</span></h1>
-    <p class="hsub">Bebo Partners places <strong>elite, verified talent</strong> across Enterprise AI and the ServiceNow ecosystem. The two most talent-scarce disciplines in enterprise technology — and the two we know best. US permanent placement and nearshore LATAM.</p>
+    <p class="hsub">Bebo Partners places <strong>elite, verified talent</strong> across Enterprise AI, the ServiceNow ecosystem, and AI Data Planning & Governance. Three of the most talent-scarce disciplines in enterprise technology — and the three we know best. US permanent placement and nearshore LATAM.</p>
     <div class="hacts">
       <a href="#contact" class="btn br">Contact Us</a>
       <a href="#services" class="btn bg_">What We Do</a>
@@ -188,6 +202,7 @@
       <div class="fu"><div class="sn" style="color:var(--red)">~1%</div><div class="sl">Effective unemployment in the ServiceNow ecosystem</div></div>
       <div class="fu"><div class="sn" style="color:var(--orange)">85%</div><div class="sl">of Fortune 500 companies run ServiceNow</div></div>
       <div class="fu"><div class="sn" style="color:var(--teal)">10x</div><div class="sl">Demand for AI engineers outpacing supply globally</div></div>
+      <div class="fu"><div class="sn" style="color:var(--blue)">44%</div><div class="sl">CAGR of the AI Governance market through 2030</div></div>
     </div>
   </div>
 </section>
@@ -199,11 +214,12 @@
         <div class="sl2">About Bebo Partners</div>
         <h2 class="st">CURATED<br>TALENT NETWORK</h2>
         <p>Bebo Partners was founded on a simple premise: <strong>generalist recruiters are failing the enterprise technology market.</strong> They keyword-match certifications they don't understand and forward resumes they haven't screened.</p>
-        <p>We operate at the intersection of the two most talent-scarce disciplines in enterprise technology right now — <strong>Enterprise AI</strong> and <strong>ServiceNow</strong>. Both suffer the same structural problem: a tiny verified talent pool, rampant credential fraud, and companies with no internal ability to screen properly.</p>
+        <p>We operate at the intersection of three of the most talent-scarce disciplines in enterprise technology right now — <strong>Enterprise AI</strong>, <strong>ServiceNow</strong>, and <strong>AI Data Planning & Governance</strong>. All three suffer the same structural problem: a tiny verified talent pool, rampant credential fraud, and companies with no internal ability to screen properly.</p>
         <p>Operating across the <strong>USA and LATAM</strong>, we serve growth-stage companies, Fortune 500 IT and AI teams, and the consulting firms that implement for them.</p>
         <div class="atags">
           <span class="atag2">Enterprise AI</span>
           <span class="atag2">ServiceNow Ecosystem</span>
+          <span class="atag2">AI Data Planning & Governance</span>
           <span class="atag2">US Permanent Placement</span>
           <span class="atag2">Nearshore LATAM</span>
           <span class="atag2">USA / LATAM</span>
@@ -212,6 +228,7 @@
       <div class="acs fu">
         <div class="ac r"><div class="acn">116K</div><div class="acl">Certified ServiceNow professionals globally — against hundreds of thousands of active deployments</div></div>
         <div class="ac t"><div class="acn">10x</div><div class="acl">Enterprise AI engineer demand outpacing supply — the fastest growing talent gap in tech</div></div>
+        <div class="ac o"><div class="acn">1.5%</div><div class="acl">of organisations believe they have adequate AI governance headcount — IAPP 2025</div></div>
       </div>
     </div>
   </div>
@@ -221,36 +238,70 @@
   <div class="C">
     <div class="fu">
       <div class="sl2">What We Do</div>
-      <h2 class="st">TWO DISCIPLINES.<br>ONE STANDARD.</h2>
-      <p class="ss">Enterprise AI and ServiceNow are the two fastest-growing, most talent-scarce disciplines in enterprise technology. We recruit exclusively in both — with the same rigour, the same verification standard, and the same intolerance for unvetted candidates.</p>
+      <h2 class="st">THREE DISCIPLINES.<br>ONE STANDARD.</h2>
+      <p class="ss">Enterprise AI, ServiceNow, and AI Data Planning & Governance are three of the fastest-growing, most talent-scarce disciplines in enterprise technology. We recruit exclusively across all three — with the same rigour, the same verification standard, and the same intolerance for unvetted candidates.</p>
     </div>
     <div class="sg fu">
       <div class="sc"><h3>ENTERPRISE AI PRACTICE</h3><p>We place AI architects, engineers and implementation specialists who can actually build — not just talk about building. Agentic AI, LLM integration, AI governance, and enterprise AI platform roles.</p><div class="stags2"><span class="stg sr">AI Architects</span><span class="stg sr">AI Engineers</span><span class="stg sr">LLM Integration</span><span class="stg sr">Agentic AI</span><span class="stg sr">AI Governance</span></div></div>
       <div class="sc"><h3>SERVICENOW PRACTICE</h3><p>Our flagship discipline. We verify certifications through NowLearning — not just resumes. We assess real platform depth before a candidate reaches your desk.</p><div class="stags2"><span class="stg st2">ITSM</span><span class="stg st2">HRSD</span><span class="stg st2">CMDB</span><span class="stg st2">SecOps</span><span class="stg st2">CSM</span><span class="stg st2">Now Assist</span></div></div>
-      <div class="sc"><h3>NEARSHORE LATAM</h3><p>Pre-vetted senior talent from Latin America's top tech hubs. US timezone alignment, strong English, and significant cost advantages — for both AI and ServiceNow roles.</p><div class="stags2"><span class="stg sb">Contract</span><span class="stg sb">Corp-to-Corp</span><span class="stg sb">W-2</span><span class="stg sb">Project-Based</span></div></div>
-      <div class="sc"><h3>SPEED TO PLACEMENT</h3><p>Top AI and ServiceNow candidates are off-market in 10 days. Our pre-vetted pipeline means you see qualified people fast — before they accept the other offer.</p><div class="stags2"><span class="stg so">Pre-Vetted Pipeline</span><span class="stg so">Market Intelligence</span></div></div>
-      <div class="sc"><h3>CREDENTIAL VERIFICATION</h3><p>Fraud is rampant in both AI and ServiceNow. We validate every certification and assess genuine platform and model experience before any candidate reaches you.</p><div class="stags2"><span class="stg sr">NowLearning Verified</span><span class="stg sr">Technical Screening</span></div></div>
-      <div class="sc"><h3>MARKET INTELLIGENCE</h3><p>Real salary benchmarks, candidate availability, and hiring timelines across both disciplines — so you go to market with data, not assumptions.</p><div class="stags2"><span class="stg st2">Salary Benchmarking</span><span class="stg st2">Market Briefings</span></div></div>
+      <div class="sc"><h3>AI DATA PLANNING &amp; GOVERNANCE</h3><p>Enterprise planning is being rebuilt from the ground up. We place the architects, engineers, and governance specialists who make AI planning initiatives actually work — not just go live.</p><div class="stags2"><span class="stg so">FP&amp;A Architects</span><span class="stg so">Data Governance</span><span class="stg so">Anaplan</span><span class="stg so">Pigment</span><span class="stg so">OneStream</span></div></div>
+      <div class="sc"><h3>NEARSHORE LATAM</h3><p>Pre-vetted senior talent from Latin America's top tech hubs. US timezone alignment, strong English, and significant cost advantages — across AI, ServiceNow, and Data Planning roles.</p><div class="stags2"><span class="stg sb">Contract</span><span class="stg sb">Corp-to-Corp</span><span class="stg sb">W-2</span><span class="stg sb">Project-Based</span></div></div>
+      <div class="sc"><h3>CREDENTIAL VERIFICATION</h3><p>Fraud is rampant across all three disciplines. We validate every certification and assess genuine platform and implementation depth before any candidate reaches you.</p><div class="stags2"><span class="stg sr">NowLearning Verified</span><span class="stg sr">Technical Screening</span></div></div>
+      <div class="sc"><h3>MARKET INTELLIGENCE</h3><p>Real salary benchmarks, candidate availability, and hiring timelines across all three disciplines — so you go to market with data, not assumptions.</p><div class="stags2"><span class="stg st2">Salary Benchmarking</span><span class="stg st2">Market Briefings</span></div></div>
     </div>
   </div>
 </section>
 
-<section id="intel" class="sp b2">
+<section id="data-planning" class="sp b2">
   <div class="C">
-    <div class="fu"><div class="sl2">Market Intelligence</div><h2 class="st">THE TALENT REALITY<br>IN AI & SERVICENOW</h2><p class="ss" style="margin-bottom:36px">The structural talent shortages hiring managers need to understand before they start a search.</p></div>
-    <div class="ic fu"><p><strong>Enterprise AI and ServiceNow share the same core problem.</strong> Both are business-critical. Both are growing faster than the talent pool. In ServiceNow, only ~116,000 certified professionals exist against hundreds of thousands of deployments. In AI, demand for experienced implementation engineers is outpacing supply by a factor of ten. <strong>Credential fraud is rampant in both.</strong> Generalist recruiters are not equipped to screen for either.</p></div>
+    <div class="fu">
+      <div class="sl2">AI Data Planning & Governance</div>
+      <h2 class="st">THE DATA BEHIND<br>THE AI IS BROKEN.<br><span style="-webkit-text-stroke:1.5px var(--orange);color:transparent">WE FIX THAT.</span></h2>
+    </div>
+    <div class="dp-grid">
+      <div class="dp-body fu">
+        <div style="background:var(--dark3);border:1px solid var(--border);border-left:4px solid var(--orange);border-radius:0 10px 10px 0;padding:24px 28px;margin-bottom:28px">
+          <p style="font-size:15px;font-weight:300;line-height:1.7;color:var(--text);margin-bottom:0">Bebo Partners is the leading specialist talent company at the intersection of AI, data planning, and governance. We work with enterprise technology teams, Fortune 500 finance functions, and the consulting firms that implement for them — helping them find the talent that makes AI planning initiatives actually work.</p>
+        </div>
+        <p>We recruit across the full stack: the architects who build modern planning platforms, the engineers who connect them to enterprise data infrastructure, and the governance specialists who ensure AI outputs are accurate, auditable, and compliant.</p>
+        <p>In financial services, healthcare, and government — where the regulatory stakes are highest and the talent is scarcest — this is where we specialise. Generalist recruiters keyword-match job titles they don't understand. We know the difference between an Anaplan model builder and a Centre of Excellence lead. We know what good data governance looks like inside a SOX-regulated environment.</p>
+        <div class="dp-tags">
+          <span class="atag2">FP&A Architecture</span>
+          <span class="atag2">Data Governance</span>
+          <span class="atag2">Anaplan · Pigment · OneStream</span>
+          <span class="atag2">Data Engineering</span>
+          <span class="atag2">MDM & Compliance</span>
+          <span class="atag2">USA / LATAM</span>
+        </div>
+      </div>
+      <div class="acs fu">
+        <div class="ac o"><div class="acn">44%</div><div class="acl">CAGR of the AI Governance market 2026–2030 — the fastest growing compliance discipline in enterprise tech</div></div>
+        <div class="ac t"><div class="acn">1.5%</div><div class="acl">of organisations believe they have adequate AI governance headcount — IAPP 2025</div></div>
+        <div style="background:var(--dark3);border:1px solid var(--border);border-radius:10px;padding:30px 32px">
+          <div style="font-style:italic;font-size:13px;color:rgba(237,242,247,.4);border-left:2px solid var(--border);padding-left:12px;margin-bottom:12px">"We need at least one person working practically full-time just to maintain the models."</div>
+          <p style="font-size:13px;color:var(--muted);line-height:1.6;font-weight:300">The reality of every major planning platform deployment — from Reddit's r/FPandA to Gartner reviews. The talent to build and govern these systems is genuinely scarce. We find it.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="intel" class="sp">
+  <div class="C">
+    <div class="fu"><div class="sl2">Market Intelligence</div><h2 class="st">THE TALENT REALITY<br>IN AI, SERVICENOW<br>&amp; DATA PLANNING</h2><p class="ss" style="margin-bottom:36px">The structural talent shortages hiring managers need to understand before they start a search.</p></div>
+    <div class="ic fu"><p><strong>Enterprise AI, ServiceNow, and AI Data Planning share the same core problem.</strong> All three are business-critical. All three are growing faster than the talent pool. In ServiceNow, only ~116,000 certified professionals exist against hundreds of thousands of deployments. In AI, demand for experienced engineers is outpacing supply by a factor of ten. In Data Planning & Governance, only 1.5% of organisations believe they have adequate headcount. <strong>Credential fraud is rampant across all three.</strong> Generalist recruiters are not equipped to screen for any of them.</p></div>
     <div class="pg fu">
       <div class="pc"><div class="pcn">01</div><div class="pcq">"The certifications look real. The person can't log into the platform."</div><h4>Credential Fraud — ServiceNow & AI</h4><p>Exam dumps flood the ServiceNow market. AI candidates inflate model experience and claim deployments they observed, not built. Generalist recruiters can't tell the difference. We can.</p></div>
       <div class="pc"><div class="pcn">02</div><div class="pcq">"Every resume says GPT-4, Claude, Gemini, LangChain, RAG, fine-tuning. Nobody does all of that well."</div><h4>The AI Resume–Reality Gap</h4><p>AI resumes are as padded as ServiceNow ones. Real implementation depth is narrow. A bad AI hire on a mission-critical project can cost significantly more than a bad ServiceNow hire.</p></div>
       <div class="pc"><div class="pcn">03</div><div class="pcq">"We found someone great. Our process took 6 weeks. They accepted another offer by week 3."</div><h4>Losing Candidates Mid-Process</h4><p>Top AI and ServiceNow candidates receive 3–5 competing offers simultaneously. Speed is a competitive advantage — not a nice-to-have. Most enterprise hiring processes aren't built for this market.</p></div>
-      <div class="pc"><div class="pcn">04</div><div class="pcq">"Our entire AI build is in one person's head. If they leave, we're exposed."</div><h4>Single Point of Failure</h4><p>AI and ServiceNow implementations are routinely built by 1–2 people in mid-market companies. When that person leaves, a platform crisis and a recruitment crisis hit simultaneously.</p></div>
-      <div class="pc"><div class="pcn">05</div><div class="pcq">"We budgeted $110K for an AI engineer. The market is at $160K. Now what?"</div><h4>Salary Expectations Shock</h4><p>AI implementation salaries have moved fast and most internal benchmarks are 12–18 months behind. Going to market underpaying in this space damages your employer brand in a small, connected community.</p></div>
+      <div class="pc"><div class="pcn">04</div><div class="pcq">"The platform is live. The data is broken. Nobody owns it."</div><h4>The AI Planning Governance Gap</h4><p>Finance teams are going live on Anaplan, Pigment, and OneStream — and discovering the real problem was never the software. Ungoverned data undermines every AI forecast and every board report. Governance talent is the scarcest hire in enterprise technology right now.</p></div>
+      <div class="pc"><div class="pcn">05</div><div class="pcq">"We budgeted 13 weeks for implementation. It took 12 months."</div><h4>Planning Platform Implementation Failure</h4><p>Every major planning platform requires specialist model builders to go live. The consulting firm rolls off. Nobody internally knows how the model works. We place the people who prevent that.</p></div>
       <div class="pc"><div class="pcn">06</div><div class="pcq">"We hired someone certified on GPT-3 era thinking. We're building agentic workflows now. They're lost."</div><h4>AI Evolves Faster Than Talent</h4><p>The AI implementation landscape changes quarterly. Agentic frameworks, new model capabilities, new tooling — a candidate who was genuinely current 18 months ago may be significantly behind today.</p></div>
     </div>
   </div>
 </section>
 
-<section id="articles" class="sp">
+<section id="articles" class="sp b2">
   <div class="C">
     <div class="ahead fu">
       <div><div class="sl2">Insights &amp; Hiring Trends</div><h2 class="st">WHAT WE'RE<br>WATCHING</h2></div>
@@ -279,13 +330,13 @@
   </div>
 </section>
 
-<section id="contact" class="sp b2">
+<section id="contact" class="sp">
   <div class="C">
     <div class="cg">
       <div class="fu">
         <div class="sl2">Get In Touch</div>
         <h2 class="st">LET'S TALK<br>TALENT</h2>
-        <p class="ss">Whether you're hiring for Enterprise AI, ServiceNow, or another specialist technology discipline — or you're a candidate looking for your next move — we'd like to hear from you.</p>
+        <p class="ss">Whether you're hiring for Enterprise AI, ServiceNow, AI Data Planning & Governance, or another specialist technology discipline — or you're a candidate looking for your next move — we'd like to hear from you.</p>
         <div class="citems">
           <div class="ci"><div class="cii">✉️</div>hello@bebopartners.com</div>
           <div class="ci"><div class="cii">💼</div><a href="https://linkedin.com/company/bebo-partners" style="color:var(--muted);text-decoration:none">LinkedIn: Bebo Partners</a></div>
@@ -319,10 +370,10 @@
           <text font-family="'Bebas Neue',sans-serif" font-size="27" letter-spacing="1.5"><tspan x="42" y="24" fill="#E8453C">B</tspan><tspan fill="#F5A623">E</tspan><tspan fill="#4ECDC4">B</tspan><tspan fill="#2E9CCA">O</tspan></text>
           <text x="44" y="34" font-family="'DM Sans',sans-serif" font-size="8" font-weight="600" letter-spacing="3.5" fill="rgba(237,242,247,0.45)">PARTNERS</text>
         </svg>
-        <p>Specialist recruiting for Enterprise AI and the ServiceNow ecosystem. US permanent placement and nearshore LATAM — backed by 25+ years of senior recruiting leadership.</p>
+        <p>Specialist recruiting for Enterprise AI, the ServiceNow ecosystem, and AI Data Planning & Governance. US permanent placement and nearshore LATAM — backed by 25+ years of senior recruiting leadership.</p>
       </div>
-      <div class="fc"><h5>Navigate</h5><ul><li><a href="#about">About Us</a></li><li><a href="#services">Services</a></li><li><a href="#intel">Market Intel</a></li><li><a href="#articles">Insights</a></li><li><a href="#contact">Contact</a></li></ul></div>
-      <div class="fc"><h5>Specialisms</h5><ul><li><a href="#services">Enterprise AI</a></li><li><a href="#services">AI Architecture</a></li><li><a href="#services">ServiceNow ITSM</a></li><li><a href="#services">ServiceNow HRSD</a></li><li><a href="#services">Nearshore / LATAM</a></li></ul></div>
+      <div class="fc"><h5>Navigate</h5><ul><li><a href="#about">About Us</a></li><li><a href="#services">Services</a></li><li><a href="#data-planning">Data Planning</a></li><li><a href="#intel">Market Intel</a></li><li><a href="#articles">Insights</a></li><li><a href="#contact">Contact</a></li></ul></div>
+      <div class="fc"><h5>Specialisms</h5><ul><li><a href="#services">Enterprise AI</a></li><li><a href="#services">AI Architecture</a></li><li><a href="#services">ServiceNow ITSM</a></li><li><a href="#services">ServiceNow HRSD</a></li><li><a href="#data-planning">AI Data Planning</a></li><li><a href="#data-planning">Data Governance</a></li><li><a href="#data-planning">FP&A Architecture</a></li><li><a href="#services">Nearshore / LATAM</a></li></ul></div>
     </div>
     <div class="fbot">
       <p>© 2026 Bebo Partners LLC. All rights reserved.</p>
