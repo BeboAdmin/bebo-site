@@ -1,5 +1,5 @@
 ---
-title: The Explosion of Data Governance — and Why It's Reshaping Enterprise Hiring
+title: data-governance
 date: 2026-04-13T08:09:00.000-06:00
 category: market-data
 summary: AI didn't just accelerate digital transformation — it exposed a crisis
